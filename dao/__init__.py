@@ -58,4 +58,3 @@ def listar_livros(login):
 
     return saida
 
-print(listar_livros('mari'))
