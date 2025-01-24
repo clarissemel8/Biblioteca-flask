@@ -37,7 +37,7 @@ def cadastro():
 
 @app.route("/cadastrar_user",methods=['POST'])
 def fazercadastro():
-    nome = request.form.get('nome completo')
+    nome = request.form.get('nome')
     usuario = request.form.get('usuario')
     senha = request.form.get('senha')
 
