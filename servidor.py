@@ -10,6 +10,24 @@ app.secret_key = 'ajhk23h423'
 def paginicial():
     return render_template('inicio2.html')
 
+@app.route('/pagaddresenha')
+def mostrar_pag_add_resenha():
+    return render_template('addresenha.html')
+
+@app.route('/salvarresenha', methods =['POST'])
+def salvar_resenha():
+    titulo = request.form.get('titulo')
+    resenha = request.form.get('resenha')
+    login = session['login']
+    dao.inserir_resenha(titulo, resenha, login)
+
+    resenhas = dao.listar_livros(login)
+
+
+    return render_template('lista.html', lista=resenhas)
+
+
+
 @app.route('/enviar-dados' , methods =['POST', 'GET'])
 def paglivros():
 
@@ -19,7 +37,7 @@ def paglivros():
         senha = request.form.get('senha')
 
 
-        if len(dao.login(login,senha)) > 0:
+        if len(dao.login(login, senha)) > 0:
             session['login'] = login
             return render_template('livros.html')
         else:
@@ -48,14 +66,6 @@ def fazercadastro():
     else:
         msg = 'usuario nao inserido'
         return render_template('inicio2.html', texto=msg)
-
-
-@app.route("/listarlivros")
-def lista():
-    login = session['login']
-    resenhas = dao.listar_livros(login)
-
-    return render_template('lista.html', lista=resenhas)
 
 
 

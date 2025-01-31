@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Resenha</title>
+    <link rel="stylesheet" href="../static/addstyle.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Compartilhe Sua Leitura</h1>
+        <form action="/salvarresenha" method="post">
+            <input type="text" id="titulo" name="titulo" placeholder="Título do livro" class="input-field" required>
+            <input type="text" id="resenha" name="resenha" placeholder="Resenha" class="input-field" required>
+            <button type="submit" class="submit-button">Enviar título do livro lido</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+

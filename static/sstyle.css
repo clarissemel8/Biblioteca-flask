@@ -86,3 +86,85 @@ footer {
 .custom-link:active {
   background-color: #f5deb3; /* Cor de fundo mais escura */
 }
+
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Definindo o fundo e layout da página */
+body {
+    background-color:  #d2b48c;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+/* Container dos livros */
+.livro-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Cada livro */
+.livro {
+    background-color: #ffdead;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover para cada livro */
+.livro:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Título dos livros */
+.livro h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 15px 0;
+}
+
+/* Texto do livro */
+.livro p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Link */
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Estilo das imagens dos livros */
+.livro-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .livro-container {
+        justify-content: center;
+    }
+
+    .livro {
+        width: 80%;
+    }
+}

@@ -15,9 +15,9 @@
         </header>
 
         <div class="book-list">
-            {% for resenha in lista %}
+           {% for resenha in lista|unique %}
                 <div class="book-item">
-                    <p><strong>{{ resenha[0] }}</strong> - {{ resenha[1] }}</p>
+                    <p><strong>{{ resenha[0] }}</strong> </p>
                 </div>
             {% endfor %}
         </div>

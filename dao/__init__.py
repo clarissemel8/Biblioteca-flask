@@ -46,6 +46,28 @@ def inserir_user(nome, login, senha):
     return exito
 
 
+def inserir_resenha(titulo, resenha, login):
+
+    conn = conectardb()
+    cur = conn.cursor()
+    try:
+        sql = f"INSERT INTO resenha (titulo, resenha, login) VALUES ('{titulo}','{resenha}', '{login}' )"
+        cur.execute(sql)
+
+
+
+    except psycopg2.IntegrityError:
+        conn.rollback()
+        exito = False
+    else:
+        conn.commit()
+        exito = True
+
+    cur.close()
+    conn.close()
+    return exito
+
+
 def listar_livros(login):
     con = conectardb()
     cur = con.cursor()

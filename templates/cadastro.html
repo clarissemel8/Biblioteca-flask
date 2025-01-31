@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="../static/caad.css">
 </head>
 <body>
-  <form action="/cadastrar_user" method="POST">
-       <input type="text" id="nome completo" name="nome" placeholder="Digite seu nome Completo" class="input-field" required>
-        <input type="text" id="nome" name="usuario" placeholder="Digite seu nome de usuario" class="input-field" required>
+  <div class="form-container">
+    <h1>Cadastro de Usuário</h1>
+    <form action="/cadastrar_user" method="POST">
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" class="input-field" required>
+        <input type="text" id="usuario" name="usuario" placeholder="Digite seu nome de usuário" class="input-field" required>
         <input type="password" id="senha" name="senha" placeholder="Crie uma senha" class="input-field" required>
-
         <button type="submit" class="start-button">Criar conta</button>
     </form>
-
+  </div>
 </body>
 </html>
